@@ -10,7 +10,7 @@ A direct button to WhatsApp for quick and easy communication.
 Technologies Used
 The portfolio was built using TypeScript with TSX, leveraging a modern and efficient approach to web interface development.
 
-![image](https://github.com/user-attachments/assets/302974f5-9e7c-4d2e-acf9-8de92ed4eea4)
+![image](https://github.com/user-attachments/assets/e1c74fc1-7907-4e47-b67c-c2def3cf0261)
 ( The project is still ongoing )
 
 This project was created to help Móveis Meotti strengthen their online presence and provide customers with easy access to their services.
