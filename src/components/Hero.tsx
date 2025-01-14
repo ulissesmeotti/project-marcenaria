@@ -1,5 +1,4 @@
-import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -7,7 +6,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1622021142947-da7dedc7c39a?auto=format&fit=crop&q=80")',
+          backgroundImage: `url("/images/img-fundo-marcenaria.jpg")`,
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
