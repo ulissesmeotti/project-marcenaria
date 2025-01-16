@@ -212,7 +212,11 @@ export default function Products() {
       {[
         {
           id: 1,
+<<<<<<< HEAD
           image: "images-novas/caideira-de-balanco.jpg",
+=======
+          image: "images/cadeira-de-balancoo.jpg",
+>>>>>>> 8cc41e8d22c9685acaadf3026d7bdd4118878005
           name: "Cadeira de Balanço em eucalipto",
           description: "Totalmente em madeira, com lindos acabamentos",
           price: 900,
@@ -226,7 +230,11 @@ export default function Products() {
         },
         {
           id: 3,
+<<<<<<< HEAD
           image: "images-novas/caixa-de-lenha.jpg",
+=======
+          image: "images/caixa-de-lenha.jpg",
+>>>>>>> 8cc41e8d22c9685acaadf3026d7bdd4118878005
           name: "Caixa de lenha em eucalipto",
           description: "Ideal para decorar o espaço e guardar lenha",
           price: 830,
