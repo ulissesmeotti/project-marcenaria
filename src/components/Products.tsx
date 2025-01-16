@@ -13,11 +13,11 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: "Mesa Rústica de Pinheiro 6 Lugares",
+    name: "Mesa Rústica com Gaveta",
     category: "Mesas",
     price: 1800,
     description: "Tamanho: 2.00 x 1.50m",
-    image: "images/mesa-pinheiro.jpg"
+    image: "images-novas/mesa-com-gaveta.jpg"
   },
   {
     id: 2,
@@ -49,42 +49,50 @@ const products: Product[] = [
     category: "Cadeiras",
     price: 850,
     description: "Cadeira de balanço inteira de madeira eucalipto",
-    image: "images/cadeira-de-balancoo.jpg"
+    image: "images-novas/caideira-de-balanco.jpg"
   },
   {
     id: 6,
-    name: "Porta Entalhada",
+    name: "Porta de Compensado",
     category: "Portas",
-    price: 2800,
-    description: "Porta com entalhes artesanais exclusivos",
-    image: "https://images.unsplash.com/photo-1517646331032-9e8563c520a1?auto=format&fit=crop&q=80"
+    price: 450,
+    description: "Porta de compensado com detalhes",
+    image: "images/img-porta-compensado.png"
   },
   {
     id: 7,
-    name: "Porta Pivotante",
+    name: "Porta de Madeira",
     category: "Portas",
-    price: 3500,
-    description: "Porta pivotante moderna em madeira maciça",
-    image: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&q=80"
+    price: 1200,
+    description: "Porta moderna em madeira maciça",
+    image: "images/img-porta-de-madeira.jpg"
   },
   {
     id: 8,
     name: "Tábua para Churrasco",
     category: "Tábuas",
-    price: 280,
+    price: 180,
     description: "Tábua premium para churrasco com canaleta",
-    image: "https://images.unsplash.com/photo-1609770231080-e321deccc34c?auto=format&fit=crop&q=80"
+    image: "images/img-tabua-carne.jpg"
   },
   {
     id: 9,
     name: "Kit Tábuas Decorativas",
     category: "Tábuas",
-    price: 450,
+    price: 230,
     description: "Conjunto de tábuas decorativas para cozinha",
-    image: "images/"
+    image: "images/tabua-de-carne.jpg"
   },
   {
     id: 10,
+    name: "Tábua para Legumes",
+    category: "Tábuas",
+    price: 230,
+    description: "Conjunto de tábuas decorativas para cozinha",
+    image: "images-novas/tabua-legumes.jpg"
+  },
+  {
+    id: 11,
     name: "Porta Espeto de Eucalito",
     category: "Porta Espetos",
     price: 230,
@@ -92,7 +100,7 @@ const products: Product[] = [
     image: "images/porta-espeto-3.jpg"
   },
   {
-    id: 11,
+    id: 12,
     name: "Porta Espeto de Peróba",
     category: "Porta Espetos",
     price: 230,
@@ -100,16 +108,40 @@ const products: Product[] = [
     image: "images/porta-espeto-2.jpg"
   },
   {
-    id: 12,
+    id: 13,
     name: "Porta Espeto de Canafístula",
     category: "Porta Espetos",
     price: 230  ,
     description: "Porta espeto para área de churrasco",
     image: "images/porta-espeto-1.jpg"
-  }
+  },
+  {
+    id: 14,
+    name: "Aparador de Grevilea",
+    category: "Aparadores",
+    price: 230,
+    description: "Aparador decorativo",
+    image: "images-novas/aparador-normal.jpg"
+  },
+  {
+    id: 15,
+    name: "Aparador de Canafístula",
+    category: "Aparadores",
+    price: 230,
+    description: "Aparador decorativo",
+    image: "images-novas/aparador-canafisutula.jpg"
+  },
+  // {
+  //   id: 16,
+  //   name: "Porta Espeto de Peróba",
+  //   category: "Aparadores",
+  //   price: 230,
+  //   description: "Aparador decorativo",
+  //   image: "images-novas/porta-espeto-2.jpg"
+  // },
 ];
 
-const categories = ["Mesas", "Cadeiras", "Portas", "Tábuas", "Porta Espetos"];
+const categories = ["Mesas", "Cadeiras", "Portas", "Tábuas", "Porta Espetos", "Aparadores"];
 const bestSellers = products.slice(0, 4); // Using first 4 products as best sellers for demo
 
 export default function Products() {
@@ -170,34 +202,64 @@ export default function Products() {
       </section>
 
       <section id="best-sellers" className="py-20 bg-amber-50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <Tag className="h-8 w-8 text-amber-800" />
-            <h2 className="text-4xl font-bold text-amber-900">Mais Vendidos</h2>
-          </div>
+  <div className="container mx-auto px-4">
+    <div className="flex items-center justify-center gap-4 mb-12">
+      <Tag className="h-8 w-8 text-amber-800" />
+      <h2 className="text-4xl font-bold text-amber-900">Mais Vendidos</h2>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {bestSellers.map((product) => (
-              <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-amber-900 mb-2">{product.name}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{product.description}</p>
-                  <p className="text-xl font-bold text-amber-800">
-                    R$ {product.price.toLocaleString()}
-                  </p>
-                </div>
-              </div>
-            ))}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        {
+          id: 1,
+          image: "images-novas/caideira-de-balanco.jpg",
+          name: "Cadeira de Balanço em eucalipto",
+          description: "Totalmente em madeira, com lindos acabamentos",
+          price: 900,
+        },
+        {
+          id: 2,
+          image: "images/porta-espeto-3.jpg",
+          name: "Porta Espeto de Eucalipto",
+          description: "Inteiro de madeira com espaço para 9 espetos",
+          price: 230,
+        },
+        {
+          id: 3,
+          image: "images-novas/caixa-de-lenha.jpg",
+          name: "Caixa de lenha em eucalipto",
+          description: "Ideal para decorar o espaço e guardar lenha",
+          price: 830,
+        },
+        {
+          id: 4,
+          image: "images/img-mesa-centro.jpg",
+          name: "Mesa de centro",
+          description: "Mesa de centro para decorar seu ambiente",
+          price: 450,
+        },
+      ].map((product) => (
+        <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="aspect-w-16 aspect-h-9">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-48 object-cover"
+            />
+          </div>
+          <div className="p-4">
+            <h3 className="text-lg font-semibold text-amber-900 mb-2">{product.name}</h3>
+            <p className="text-sm text-gray-600 mb-3">{product.description}</p>
+            <p className="text-xl font-bold text-amber-800">
+              R$ {product.price.toLocaleString()}
+            </p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
     </>
   );
 }

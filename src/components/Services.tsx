@@ -9,12 +9,12 @@ export default function Services() {
     {
       title: "Móveis Rústicos",
       description: "Peças com personalidade que trazem o charme do rústico para seu ambiente",
-      image: "https://images.unsplash.com/photo-1533090368676-1fd25485db88?auto=format&fit=crop&q=80"
+      image: "images/img-aparador-rustico.jpg"
     },
     {
       title: "Mesas e Cadeiras",
       description: "Conjuntos completos para sua sala de jantar ou ambiente comercial",
-      image: "https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&q=80"
+      image: "images/img-moveis-rusticos.jpg"
     },
     {
       title: "Tábuas de Carne",

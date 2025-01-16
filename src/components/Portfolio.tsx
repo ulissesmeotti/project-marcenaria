@@ -29,7 +29,7 @@ export default function Portfolio() {
       ]
     },
     {
-      title: "Mesa de Grande",
+      title: "Mesa Grande",
       image: "images/mesa-festa.jpg",
       description: "Mesa grande, perfeita para festas e eventos, produzida com uma combinação de Eucalipto e Grevílea. Projetada para acomodar grandes grupos com conforto e estilo, a mesa possui um acabamento resistente, ideal para ambientes internos ou externos. O design robusto valoriza as características naturais das madeiras utilizadas, garantindo durabilidade e beleza.",
       specs: [

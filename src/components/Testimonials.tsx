@@ -1,4 +1,3 @@
-import React from 'react';
 import { Star } from 'lucide-react';
 
 export default function Testimonials() {
@@ -16,6 +15,21 @@ export default function Testimonials() {
     {
       name: "Pedro Santos",
       text: "Profissionalismo e pontualidade na entrega. Os móveis ficaram exatamente como planejamos.",
+      rating: 5
+    },
+    {
+      name: "Marcos Lima",
+      text: "Acabamento impecável, adorei o serviço. Super recomendo!",
+      rating: 5
+    },
+    {
+      name: "Celma Fritzen",
+      text: "Encomendamos uma mesa e chegou dentro do prazo, muito linda, adorei",
+      rating: 5
+    },
+    {
+      name: "Jorge Machado de Souza",
+      text: "Muito lindo, adorei os móveis que encomendei",
       rating: 5
     }
   ];
