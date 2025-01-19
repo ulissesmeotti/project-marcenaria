@@ -1,13 +1,12 @@
-import React from 'react';
-import { Axe, ChevronDown, MapPin, Phone, Mail, Star, Menu } from 'lucide-react';
-import Hero from './components/Hero';
-import Services from './components/Services';
+import { Menu } from 'lucide-react';
 import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Products from './components/Products';
-import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Hero from './components/Hero';
+import Portfolio from './components/Portfolio';
+import Products from './components/Products';
+import Services from './components/Services';
+import Testimonials from './components/Testimonials';
 
 function App() {
   return (
@@ -16,8 +15,8 @@ function App() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Axe className="h-8 w-8 text-amber-800" />
-              <span className="text-xl font-semibold text-amber-900">Móveis Meotti</span>
+            <img src="images-novas/logo-cortada.png" alt="Logo Móveis Meotti" className="h-20 w-25" />
+
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#about" className="text-gray-700 hover:text-amber-800">Sobre</a>

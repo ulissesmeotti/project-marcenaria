@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Clock, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Contact() {
   const phoneNumber = "45999071709";
@@ -19,11 +19,19 @@ export default function Contact() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-amber-800" />
-                <span className="text-gray-700">(45) 99907-1709</span>
+                <span className="text-gray-700">Número fixo: (45) 3273-1100</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-5 w-5 text-amber-800" />
+                <span className="text-gray-700">WhatsApp: (45) 99907-1709</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-amber-800" />
-                <span className="text-gray-700">contato@moveismeotti.com</span>
+                <span className="text-gray-700">Email: marcenariamoveismeotti@gmail.com</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Clock className="h-5 w-5 text-amber-800" />
+                <span className="text-gray-700">Horário de Funcionamento: Seg-Sex 08:00 - 18:00, Sáb 08:00 - 12:00</span>
               </div>
             </div>
             <a
@@ -37,44 +45,17 @@ export default function Contact() {
             </a>
           </div>
 
-          {/* Formulário de solicitação de orçamento */}
-          <div className="bg-white rounded-lg shadow-lg p-12 border border-gray-200">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Solicite um Orçamento</h3>
-            <form className="space-y-6">
-              <div>
-                <label className="block text-gray-700 mb-1 font-medium" htmlFor="name">Nome</label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-300"
-                  placeholder="Digite seu nome"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-700 mb-1 font-medium" htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-300"
-                  placeholder="Digite seu email"
-                />
-              </div>
-              <div>
-                <label className="block text-gray-700 mb-1 font-medium" htmlFor="message">Mensagem</label>
-                <textarea
-                  id="message"
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:border-amber-500 focus:ring-amber-300"
-                  placeholder="Descreva sua solicitação"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-amber-900 text-white px-4 py-3 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
-              >
-                Enviar Solicitação
-              </button>
-            </form>
+          {/* Mapa do Google Maps */}
+          <div className="flex justify-center items-center">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1054.8665940573123!2d-53.90879744670078!3d-24.563701119546707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f39d94852e41a9%3A0x4521eb02ac2d45d1!2sM%C3%B3veis%20e%20Esquadrias%20Meotti!5e0!3m2!1spt-BR!2sus!4v1737307903918!5m2!1spt-BR!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg shadow-lg"
+            ></iframe>
           </div>
         </div>
       </div>
