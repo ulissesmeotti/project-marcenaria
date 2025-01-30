@@ -1,4 +1,3 @@
-import { Tag } from 'lucide-react';
 import { useState } from 'react';
 
 interface Product {
@@ -111,7 +110,7 @@ const products: Product[] = [
     id: 13,
     name: "Porta Espeto de Canafístula",
     category: "Porta Espetos",
-    price: 230  ,
+    price: 230,
     description: "Porta espeto para área de churrasco",
     image: "images/porta-espeto-1.jpg"
   },
@@ -131,50 +130,69 @@ const products: Product[] = [
     description: "Aparador decorativo",
     image: "images-novas/aparador-canafisutula.jpg"
   },
-  // {
-  //   id: 16,
-  //   name: "Porta Espeto de Peróba",
-  //   category: "Aparadores",
-  //   price: 230,
-  //   description: "Aparador decorativo",
-  //   image: "images-novas/porta-espeto-2.jpg"
-  // },
 ];
 
 const categories = ["Mesas", "Cadeiras", "Portas", "Tábuas", "Porta Espetos", "Aparadores"];
-const bestSellers = products.slice(0, 4); // Using first 4 products as best sellers for demo
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const [priceRange, setPriceRange] = useState(4000);
+  const [expandedProductId, setExpandedProductId] = useState<number | null>(null);
 
   const filteredProducts = products.filter(
-    product => product.category === selectedCategory
+    (product) =>
+      product.category === selectedCategory && product.price <= priceRange
   );
 
-  return (
-    <>
-      <section id="products" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-amber-900 mb-12">Nossos Produtos</h2>
-          
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full text-sm font-semibold transition-colors
-                  ${selectedCategory === category
-                    ? 'bg-amber-800 text-white'
-                    : 'bg-amber-100 text-amber-800 hover:bg-amber-200'
-                  }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+  const maxPriceInCategory = Math.max(
+    ...products.filter((product) => product.category === selectedCategory).map((product) => product.price)
+  );
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProducts.map((product) => (
+  const toggleDescription = (id: number) => {
+    setExpandedProductId(expandedProductId === id ? null : id);
+  };
+
+  return (
+    <section id="products" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center text-amber-900 mb-12">Nossos Produtos</h2>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => {
+                setSelectedCategory(category);
+                setPriceRange(4000);
+              }}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-colors ${selectedCategory === category
+                  ? "bg-amber-800 text-white"
+                  : "bg-amber-100 text-amber-800 hover:bg-amber-200"
+                }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+{/* 
+        <div className="mb-6">
+          <label htmlFor="priceRange" className="block text-sm font-semibold text-gray-700 mb-2">
+            Filtrar por preço: Até R$ {priceRange.toLocaleString()}
+          </label>
+          <input
+            id="priceRange"
+            type="range"
+            min={0}
+            max={maxPriceInCategory}
+            value={priceRange}
+            onChange={(e) => setPriceRange(Number(e.target.value))}
+            className="w-full"
+          />
+        </div> */}
+  
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="aspect-w-16 aspect-h-9">
                   <img
@@ -185,81 +203,36 @@ export default function Products() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-amber-900 mb-2">{product.name}</h3>
-                  <p className="text-gray-600 mb-4">{product.description}</p>
+                  <p className="text-gray-600 mb-4">
+                    {expandedProductId === product.id
+                      ? product.description
+                      : `${product.description.slice(0, 50)}...`}
+                  </p>
+                
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-amber-800">
                       R$ {product.price.toLocaleString()}
                     </span>
-                    <button className="px-4 py-2 bg-amber-800 text-white rounded-lg hover:bg-amber-900 transition-colors">
+                    <a
+                      href="https://wa.me/45999071709"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-amber-800 text-white rounded-lg hover:bg-amber-900 transition-colors"
+                    >
                       Solicitar Orçamento
-                    </button>
+                    </a>
+
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="best-sellers" className="py-20 bg-amber-50">
-  <div className="container mx-auto px-4">
-    <div className="flex items-center justify-center gap-4 mb-12">
-      <Tag className="h-8 w-8 text-amber-800" />
-      <h2 className="text-4xl font-bold text-amber-900">Mais Vendidos</h2>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {[
-        {
-          id: 1,
-          image: "images-novas/caideira-de-balanco.jpg",
-          name: "Cadeira de Balanço em eucalipto",
-          description: "Totalmente em madeira, com lindos acabamentos",
-          price: 900,
-        },
-        {
-          id: 2,
-          image: "images/porta-espeto-3.jpg",
-          name: "Porta Espeto de Eucalipto",
-          description: "Inteiro de madeira com espaço para 9 espetos",
-          price: 230,
-        },
-        {
-          id: 3,
-          image: "images-novas/caixa-de-lenha.jpg",
-          name: "Caixa de lenha em eucalipto",
-          description: "Ideal para decorar o espaço e guardar lenha",
-          price: 830,
-        },
-        {
-          id: 4,
-          image: "images/img-mesa-centro.jpg",
-          name: "Mesa de centro",
-          description: "Mesa de centro para decorar seu ambiente",
-          price: 450,
-        },
-      ].map((product) => (
-        <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="aspect-w-16 aspect-h-9">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-48 object-cover"
-            />
-          </div>
-          <div className="p-4">
-            <h3 className="text-lg font-semibold text-amber-900 mb-2">{product.name}</h3>
-            <p className="text-sm text-gray-600 mb-3">{product.description}</p>
-            <p className="text-xl font-bold text-amber-800">
-              R$ {product.price.toLocaleString()}
+            ))
+          ) : (
+            <p className="text-center col-span-full text-gray-500">
+              Nenhum produto encontrado para o filtro atual.
             </p>
-          </div>
+          )}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-    </>
+      </div>
+    </section>
   );
 }

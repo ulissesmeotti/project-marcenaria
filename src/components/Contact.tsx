@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from 'lucide-react';
+import { Clock, FacebookIcon, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Contact() {
   const phoneNumber = "45999071709";
@@ -32,6 +32,19 @@ export default function Contact() {
               <div className="flex items-center space-x-3">
                 <Clock className="h-5 w-5 text-amber-800" />
                 <span className="text-gray-700">Horário de Funcionamento: Seg-Sex 08:00 - 18:00, Sáb 08:00 - 12:00</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-amber-800 mb-6">Siga-nos nas redes sociais</h3>
+              <div className="flex items-center space-x-3">
+                <a href="https://www.instagram.com/moveismeotti" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+                  <Instagram className="h-5 w-5 text-amber-800" />
+                  <span className="text-gray-700">moveismeotti</span>
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <a href="https://www.facebook.com/moveismeotti" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+                  <FacebookIcon className="h-5 w-5 text-amber-800" />
+                  <span className="text-gray-700">moveismeotti</span>
+                </a>
               </div>
             </div>
             <a
