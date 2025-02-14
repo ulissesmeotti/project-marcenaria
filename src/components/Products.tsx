@@ -12,57 +12,57 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: "Mesa Rústica com Gaveta",
+    name: "Mesa De Madeira Nobre Marfim",
     category: "Mesas",
-    price: 1800,
-    description: "Tamanho: 2.00 x 1.50m",
-    image: "images-novas/mesa-com-gaveta.jpg"
+    price: 3600,
+    description: "Tamanho: 3.00m x 90cm",
+    image: "images-produtos/mesa-marfim.jpg"
   },
   {
     id: 2,
     name: "Mesa Rústica de Grápia",
     category: "Mesas",
-    price: 3800,
-    description: "Tamanho: 3.00 x 1.20m",
+    price: 4000,
+    description: "Tamanho: 3.00m x 90cm",
     image: "images/mesa-grápia.jpg"
   },
   {
     id: 3,
     name: "Mesa de Eucalipto",
     category: "Mesas",
-    price: 1800,
+    price: 420,
     description: "Tamanho: 80 x 80cm",
     image: "images/mesa-80x80.jpg"
   },
   {
     id: 4,
-    name: "Banquetas de Madeira",
+    name: "Cadeira de Madeira",
     category: "Cadeiras",
-    price: 450,
-    description: "Banquetas para área de lazer",
-    image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&q=80"
+    price: 650,
+    description: "Cadeira de Madeira Maciça",
+    image: "images-produtos/img-cadeira.jpg"
   },
   {
     id: 5,
     name: "Cadeira de Balanço",
     category: "Cadeiras",
-    price: 850,
+    price: 930,
     description: "Cadeira de balanço inteira de madeira eucalipto",
     image: "images-novas/caideira-de-balanco.jpg"
   },
   {
     id: 6,
-    name: "Porta de Compensado",
+    name: "Porta de Compensado Instalada",
     category: "Portas",
-    price: 450,
-    description: "Porta de compensado com detalhes",
+    price: 1600,
+    description: "Porta de compensado",
     image: "images/img-porta-compensado.png"
   },
   {
     id: 7,
-    name: "Porta de Madeira",
+    name: "Porta de Madeira Instalada",
     category: "Portas",
-    price: 1200,
+    price: 2400,
     description: "Porta moderna em madeira maciça",
     image: "images/img-porta-de-madeira.jpg"
   },
@@ -86,7 +86,7 @@ const products: Product[] = [
     id: 10,
     name: "Tábua para Legumes",
     category: "Tábuas",
-    price: 230,
+    price: 45,
     description: "Conjunto de tábuas decorativas para cozinha",
     image: "images-novas/tabua-legumes.jpg"
   },
@@ -118,7 +118,7 @@ const products: Product[] = [
     id: 14,
     name: "Aparador de Grevilea",
     category: "Aparadores",
-    price: 230,
+    price: 920,
     description: "Aparador decorativo",
     image: "images-novas/aparador-normal.jpg"
   },
@@ -126,13 +126,22 @@ const products: Product[] = [
     id: 15,
     name: "Aparador de Canafístula",
     category: "Aparadores",
-    price: 230,
+    price: 980,
     description: "Aparador decorativo",
     image: "images-novas/aparador-canafisutula.jpg"
   },
+  {
+    id: 16,
+    name: "Cômoda de Madeira",
+    category: "Cômodas",
+    price: 1800,
+    description: "Cômoda de Madeira Nobre",
+    image: "images-produtos/img-comoda.jpg"
+  },
+
 ];
 
-const categories = ["Mesas", "Cadeiras", "Portas", "Tábuas", "Porta Espetos", "Aparadores"];
+const categories = ["Mesas", "Cadeiras", "Portas", "Tábuas", "Porta Espetos", "Aparadores", "Cômodas"];
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
@@ -155,7 +164,7 @@ export default function Products() {
   return (
     <section id="products" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-amber-900 mb-12">Nossos Produtos</h2>
+        <h2 className="text-4xl font-bold text-center text-amber-900 mb-12">Conheça Nossos Produtos</h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (

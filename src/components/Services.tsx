@@ -1,4 +1,3 @@
-
 export default function Services() {
   const services = [
     {
@@ -18,17 +17,17 @@ export default function Services() {
     },
     {
       title: "Tábuas de Carne",
-      description: "Tábuas artesanais para churrasco e apresentação",
+      description: "Tábuas artesanais para churrasco",
       image: "images/tabua-de-carne.jpg"
     },
     {
       title: "Portas e Janelas",
-      description: "Esquadrias sob medida com acabamento premium",
+      description: "Portas e janelas de madeira com acabamento premium",
       image: "images/janela-veneziana.jpg"
     },
     {
       title: "Serviço de Serraria",
-      description: "Corte e beneficiamento de madeira com precisão",
+      description: "Corte e serragem de madeira com precisão",
       image: "images/img-serrar.jpg"
     }
   ];
@@ -41,8 +40,8 @@ export default function Services() {
           {services.map((service, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
               <div className="aspect-w-16 aspect-h-9">
-                <img 
-                  src={service.image} 
+                <img
+                  src={service.image}
                   alt={service.title}
                   className="object-cover w-full h-64 group-hover:scale-110 transition-transform duration-300"
                 />
@@ -55,6 +54,25 @@ export default function Services() {
           ))}
         </div>
       </div>
+      {/* Botão de Fale Conosco */}
+      <div className="text-center mt-8">
+        <a
+          href="https://wa.me/45999071709"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-amber-800 text-white px-8 py-3 rounded-full shadow-lg hover:bg-amber-700 transition"
+        >
+          Fale Conosco
+        </a>
+      </div>
+      {/* Campo para o banner */}
+      {/* <div className="mt-12">
+        <img
+          src="images-novas/banner1.png"
+          alt="Banner"
+          className="w-18 h-18 rounded-lg shadow-lg"
+        />
+      </div> */}
     </section>
   );
 }

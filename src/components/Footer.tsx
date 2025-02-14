@@ -7,13 +7,13 @@ export default function Footer() {
         {/* Primeira linha: Logo e slogan */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex items-center space-x-4 mb-6 md:mb-0">
-            <div className="bg-white p-3 rounded-full shadow-lg">  {/* Círculo com fundo branco e sombra */}
+            {/* <div className="bg-white p-3 rounded-full shadow-lg">
               <img
-                src="images-novas/logo-cortada.png"
+                // src="images-novas/logo-cortada.png"
                 alt="Logo Móveis Meotti"
                 className="h-20 w-20"  // Tamanho aumentado
               />
-            </div>
+            </div> */}
             <div>
               <span className="text-xl font-semibold">Móveis Meotti</span>
               <p className="text-sm text-amber-200">Móveis sob medida com qualidade e estilo</p>
